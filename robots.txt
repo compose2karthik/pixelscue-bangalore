@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://compose2karthik.github.io/pixelscue-bangalore/sitemap.xml
+Sitemap: https://pixelscuebangalore.com/sitemap.xml
