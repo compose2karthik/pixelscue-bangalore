@@ -796,6 +796,7 @@
   const confirmName = document.getElementById('confirmName');
   const confirmDate = document.getElementById('confirmDate');
   const confirmReset = document.getElementById('confirmReset');
+  const LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzqeeaTMmaeELigscMoBs7AUs3yfdNYWmgK_puidLHvD4NzwZqs7lHKdSAdkTt10mFlBw/exec';
 
   quoteForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -806,6 +807,13 @@
     const location = document.getElementById('flocation').value;
     const msg = `Hi Pixelscue Bangalore! I'd like a quote.%0A%0AName: ${name}%0APhone: ${phone}%0AEvent date: ${date}%0AEvent type: ${type}%0AVenue/area: ${location}`;
     window.open(`https://wa.me/917975091637?text=${msg}`, '_blank');
+
+    fetch(LEADS_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ name, phone, date, type, location })
+    }).catch(() => {});
 
     confirmName.textContent = name ? `, ${name}` : '';
     confirmDate.textContent = date ? ` for ${new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' })}` : '';
