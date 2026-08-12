@@ -50,6 +50,12 @@
     "addressRegion": "Karnataka",
     "addressCountry": "IN"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.9076828,
+    "longitude": 77.6802284
+  },
+  "hasMap": "https://www.google.com/maps/place/Pixelscue+Instant+Photo+Booth/@12.9076828,77.6802284,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1314450fb607:0x6f6b8346ee2225e5!8m2!3d12.9076828!4d77.6802284!16s%2Fg%2F11ggb3cr0t",
   "areaServed": {
     "@type": "City",
     "name": "Bangalore"
@@ -59,16 +65,18 @@
 
 <style>
   :root{
-    --pink:#FF3366;
-    --gold:#FFB800;
-    --blue:#00B8D9;
-    --violet:#7C3AED;
-    --ink:#181322;
-    --paper:#FFFFFF;
-    --pale-pink:#FFF1F5;
-    --pale-gold:#FFF9E8;
-    --pale-blue:#EAFBFE;
-    --line:#EFE7F7;
+    --pink:#9E2245;
+    --gold:#B8863A;
+    --blue:#146B62;
+    --violet:#4B3369;
+    --ink:#15111C;
+    --ink-2:#1F1A29;
+    --paper:#FAF7F1;
+    --white:#FFFFFF;
+    --pale-pink:#F5E9EC;
+    --pale-gold:#F6EFE0;
+    --pale-blue:#E7F0EE;
+    --line:#E7DFD3;
     --display:'Archivo Black', sans-serif;
     --body:'Space Grotesk', sans-serif;
     --hand:'Caveat', cursive;
@@ -83,24 +91,20 @@
     *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
   }
 
-  /* ---------- torn-edge divider (signature motif) ---------- */
-  .tear{ height:16px; background-size:24px 16px; background-repeat:repeat-x; }
-  .tear-pink{ background-image:linear-gradient(135deg, transparent 50%, var(--pink) 50%), linear-gradient(-135deg, transparent 50%, var(--pink) 50%); background-position: 0 0, 12px 0; background-color:transparent;}
-  .tear-gold{ background-image:linear-gradient(135deg, transparent 50%, var(--gold) 50%), linear-gradient(-135deg, transparent 50%, var(--gold) 50%); background-position: 0 0, 12px 0; }
-  .tear-blue{ background-image:linear-gradient(135deg, transparent 50%, var(--blue) 50%), linear-gradient(-135deg, transparent 50%, var(--blue) 50%); background-position: 0 0, 12px 0; }
-
   /* ---------- nav ---------- */
   nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
     display:flex; align-items:center; justify-content:space-between;
-    padding:12px 6vw; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px);
+    padding:14px 6vw; background:rgba(250,247,241,0.88); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
+  .logo-group{ display:flex; align-items:center; gap:10px; }
   nav img.logo-img{ height:44px; }
+  .logo-city{ font-family:var(--hand); font-size:1.55rem; color:var(--pink); transform:rotate(-4deg); display:inline-block; position:relative; top:3px; }
   .nav-links{ display:flex; gap:28px; font-weight:600; font-size:0.95rem; }
   .nav-links a:hover{ color:var(--pink); }
-  .nav-cta{ background:var(--pink); color:#fff; padding:10px 20px; border-radius:30px; font-weight:700; font-size:0.9rem; transition:transform .2s ease, box-shadow .2s ease; }
-  .nav-cta:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(255,51,102,0.35); }
+  .nav-cta{ background:var(--ink); color:#fff; padding:10px 20px; border-radius:30px; font-weight:700; font-size:0.9rem; transition:transform .2s ease, box-shadow .2s ease; }
+  .nav-cta:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(21,17,28,0.35); }
 
   /* ---------- hero ---------- */
   .hero{
@@ -155,8 +159,9 @@
   .reveal.in{ opacity:1; transform:translateY(0); }
 
   /* ---------- services ---------- */
+  #services{ background:var(--white); }
   .service-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
-  .service-card{ background:#fff; border-radius:18px; padding:28px 22px; border:2px solid var(--line); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .service-card{ background:var(--paper); border-radius:18px; padding:28px 22px; border:2px solid var(--line); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
   .service-card:hover{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(24,19,34,0.1); border-color:var(--pink); }
   .service-icon{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:16px; color:#fff; transition:transform .35s ease; }
   .service-card:hover .service-icon{ transform:rotate(-8deg) scale(1.1); }
@@ -168,12 +173,30 @@
   .service-card p{ font-size:0.92rem; color:#5a4d6b; line-height:1.5; }
 
   /* ---------- machines ---------- */
-  .machines{ background:var(--pale-blue); }
+  .machines{ background:var(--ink); color:#fff; }
+  .machines .kicker{ color:var(--gold); }
   .machines-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
-  .machines-copy p{ font-size:1.02rem; line-height:1.7; color:#3d3450; margin-bottom:16px; }
-  .machines-img{ border-radius:18px; overflow:hidden; box-shadow:0 20px 45px rgba(24,19,34,0.15); }
-  .stat-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
-  .stat-pill{ background:#fff; padding:11px 18px; border-radius:30px; font-weight:700; font-size:.88rem; border:2px solid var(--line); }
+  .machines-copy p{ font-size:1.02rem; line-height:1.7; color:#beb2cc; margin-bottom:16px; }
+  .feature-list{ display:flex; flex-direction:column; gap:14px; margin-top:28px; }
+  .feature-item{ display:flex; align-items:center; gap:12px; font-weight:600; font-size:.98rem; }
+  .feature-item .fi-icon{ width:28px; height:28px; border-radius:50%; background:rgba(184,134,58,0.15); border:1px solid rgba(184,134,58,0.45); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:.8rem; flex-shrink:0; }
+
+  .machine-slider{ position:relative; border-radius:18px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.5); aspect-ratio:4/3; background:var(--ink-2); }
+  .machine-slide{ position:absolute; inset:0; opacity:0; transition:opacity .6s ease; }
+  .machine-slide.active{ opacity:1; }
+  .machine-slide img{ width:100%; height:100%; object-fit:cover; }
+  .machine-slide .slide-caption{ position:absolute; left:0; right:0; bottom:0; padding:22px 24px; background:linear-gradient(0deg, rgba(0,0,0,0.78), transparent); color:#fff; font-family:var(--display); font-size:1.02rem; letter-spacing:-.2px; }
+  .machine-slide.placeholder{ display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; background:linear-gradient(135deg, var(--ink-2), var(--ink)); text-align:center; }
+  .machine-slide.placeholder .ph-icon{ font-size:2.6rem; }
+  .machine-slide.placeholder .ph-label{ font-family:var(--display); font-size:1rem; color:var(--gold); }
+  .machine-slide.placeholder .ph-sub{ font-size:.78rem; color:#a89bb8; }
+  .slider-dots{ position:absolute; bottom:18px; right:22px; display:flex; gap:8px; z-index:2; }
+  .slider-dot{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.35); border:none; cursor:pointer; transition:background .2s ease, transform .2s ease; padding:0; }
+  .slider-dot.active{ background:var(--gold); transform:scale(1.3); }
+  .slider-nav{ position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; background:rgba(0,0,0,0.4); color:#fff; display:flex; align-items:center; justify-content:center; z-index:2; font-size:1.2rem; transition:background .2s ease; }
+  .slider-nav:hover{ background:rgba(0,0,0,0.65); }
+  .slider-prev{ left:14px; }
+  .slider-next{ right:14px; }
 
   /* ---------- video showcase ---------- */
   .video-showcase{ background:var(--ink); color:#fff; text-align:center; }
@@ -196,13 +219,13 @@
   .gallery-more{ text-align:center; margin-top:36px; }
 
   /* ---------- trusted by ---------- */
-  .trusted{ background:var(--pale-gold); text-align:center; overflow:hidden; }
+  .trusted{ background:var(--white); text-align:center; overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .trusted h2{ margin-bottom:6px; }
   .marquee{ margin-top:34px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
   .trusted-row{ display:flex; width:max-content; gap:14px; animation:marquee 22s linear infinite; }
   .marquee:hover .trusted-row{ animation-play-state:paused; }
   @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  .trust-chip{ background:#fff; padding:14px 22px; border-radius:14px; font-weight:700; font-size:.95rem; box-shadow:0 8px 20px rgba(24,19,34,0.06); white-space:nowrap; transition:transform .25s ease, box-shadow .25s ease; }
+  .trust-chip{ background:var(--paper); padding:14px 22px; border-radius:14px; font-weight:700; font-size:.95rem; border:1px solid var(--line); white-space:nowrap; transition:transform .25s ease, box-shadow .25s ease; }
   .trust-chip:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(24,19,34,0.12); }
 
   /* ---------- packages ---------- */
@@ -226,24 +249,33 @@
   .pkg-note{ margin-top:30px; font-size:.88rem; color:#8a7d9c; text-align:center; max-width:640px; margin-left:auto; margin-right:auto; }
 
   /* ---------- areas ---------- */
-  .areas{ text-align:center; }
+  .areas{ text-align:center; background:var(--white); }
   .area-chips{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:26px; }
-  .chip{ background:#fff; border:2px solid var(--line); padding:10px 18px; border-radius:24px; font-weight:600; font-size:.9rem; transition:all .2s ease; }
+  .chip{ background:var(--paper); border:2px solid var(--line); padding:10px 18px; border-radius:24px; font-weight:600; font-size:.9rem; transition:all .2s ease; }
   .chip:hover{ background:var(--pink); color:#fff; border-color:var(--pink); transform:translateY(-2px); }
 
+  /* ---------- location ---------- */
+  .location{ background:var(--paper); }
+  .location-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+  .location-copy p{ font-size:1.02rem; line-height:1.7; color:#5a4d6b; margin-bottom:24px; }
+  .location-map{ border-radius:18px; overflow:hidden; box-shadow:0 20px 45px rgba(21,17,28,0.15); aspect-ratio:4/3; border:1px solid var(--line); }
+  .location-map iframe{ width:100%; height:100%; display:block; }
+
   /* ---------- contact ---------- */
-  .cta-final{ background:linear-gradient(135deg, var(--gold), var(--pink)); color:var(--ink); text-align:center; }
-  .cta-final h2{ color:var(--ink); }
-  .cta-final .lede{ color:#3a2a12; margin:0 auto 40px; }
-  .contact-form{ max-width:600px; margin:0 auto; background:#fff; border-radius:20px; padding:34px; text-align:left; box-shadow:0 20px 50px rgba(0,0,0,0.15); }
+  .cta-final{ background:var(--ink); color:#fff; text-align:center; position:relative; overflow:hidden; }
+  .cta-final::before{ content:''; position:absolute; inset:0; background:radial-gradient(circle at 20% 20%, rgba(184,134,58,0.12), transparent 55%), radial-gradient(circle at 80% 80%, rgba(158,34,69,0.14), transparent 55%); pointer-events:none; }
+  .cta-final .kicker{ color:var(--gold); }
+  .cta-final h2{ color:#fff; }
+  .cta-final .lede{ color:#c9c0d1; margin:0 auto 40px; }
+  .contact-form{ max-width:600px; margin:0 auto; background:var(--paper); border-radius:20px; padding:34px; text-align:left; box-shadow:0 30px 70px rgba(0,0,0,0.4); position:relative; z-index:1; border:1px solid rgba(184,134,58,0.3); }
   .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
   .form-row.full{ grid-template-columns:1fr; }
-  input, select{ width:100%; padding:13px 16px; border-radius:10px; border:2px solid var(--line); font-family:var(--body); font-size:.95rem; background:#fff; transition:border-color .2s ease; }
-  input:focus, select:focus{ outline:none; border-color:var(--pink); }
+  input, select{ width:100%; padding:13px 16px; border-radius:10px; border:2px solid var(--line); font-family:var(--body); font-size:.95rem; background:var(--white); transition:border-color .2s ease; }
+  input:focus, select:focus{ outline:none; border-color:var(--gold); }
   .form-submit{ width:100%; background:var(--ink); color:#fff; padding:16px; border-radius:12px; font-weight:700; font-size:1rem; margin-top:6px; transition:transform .2s ease, background .2s ease; }
-  .form-submit:hover{ background:var(--pink); transform:translateY(-2px); }
+  .form-submit:hover{ background:var(--gold); color:var(--ink); transform:translateY(-2px); }
 
-  footer{ background:var(--ink); color:#c9bfe0; text-align:center; padding:44px 6vw; font-size:.88rem; }
+  footer{ background:var(--ink); color:#a89bb8; text-align:center; padding:44px 6vw; font-size:.88rem; border-top:1px solid rgba(255,255,255,0.08); }
   footer img{ height:34px; margin:0 auto 14px; filter:brightness(0) invert(1); }
   footer a{ color:var(--gold); font-weight:600; }
 
@@ -252,10 +284,17 @@
 
   @media (max-width:900px){
     .nav-links{ display:none; }
+    nav{ padding:10px 4vw; }
+    .logo-group{ gap:6px; }
+    nav img.logo-img{ height:28px; }
+    .logo-city{ font-size:.95rem; transform:none; top:0; margin-right:4px; }
+    .nav-cta{ padding:8px 12px; font-size:.75rem; }
     .hero-grid{ grid-template-columns:1fr; gap:44px; }
     .collage{ height:380px; max-width:400px; margin:0 auto; }
     .service-grid{ grid-template-columns:repeat(2,1fr); }
     .machines-grid{ grid-template-columns:1fr; gap:30px; }
+    .location-grid{ grid-template-columns:1fr; gap:30px; }
+    .location-map{ order:-1; }
     .pkg-grid{ grid-template-columns:repeat(2,1fr); }
     .pkg-card.featured{ transform:none; }
     .form-row{ grid-template-columns:1fr; }
@@ -274,12 +313,16 @@
 <body>
 
 <nav>
-  <img src="images/logo-horizontal.png" alt="Pixelscue Bangalore" class="logo-img">
+  <div class="logo-group">
+    <img src="images/logo-horizontal.png" alt="Pixelscue" class="logo-img">
+    <span class="logo-city">Bangalore</span>
+  </div>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
     <a href="#packages">Packages</a>
     <a href="#areas">Areas</a>
+    <a href="#location">Find Us</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="https://wa.me/917975091637?text=Hi%20Pixelscue%20Bangalore!%20I'd%20like%20a%20quote." class="nav-cta">WhatsApp Us</a>
@@ -324,8 +367,6 @@
   </div>
 </section>
 
-<div class="tear tear-pink"></div>
-
 <!-- ============ SERVICES ============ -->
 <section id="services">
   <div class="section-inner">
@@ -357,46 +398,65 @@
   </div>
 </section>
 
-<div class="tear tear-blue"></div>
-
 <!-- ============ MACHINES ============ -->
 <section class="machines">
   <div class="section-inner machines-grid">
     <div class="machines-copy">
       <span class="kicker reveal">Our equipment</span>
-      <h2 class="reveal">Four custom-built booths, ready to travel.</h2>
+      <h2 class="reveal">Four booths, one crew, zero hassle.</h2>
       <p class="reveal">Every booth is built and maintained in-house — LED-lit, touchscreen-driven, and packed into our van with backups on hand, so setup is smooth whether it's a 50-guest house party or a 500-guest wedding.</p>
-      <div class="stat-row">
-        <span class="stat-pill reveal">📍 Based in Bangalore</span>
-        <span class="stat-pill reveal">🛠️ 4 in-house booths</span>
-        <span class="stat-pill reveal">🚐 Own transport, up to 30km included</span>
-        <span class="stat-pill reveal">👥 Technician + assistant on every job</span>
+      <div class="feature-list">
+        <div class="feature-item reveal"><span class="fi-icon">✓</span> Transport up to 30km included</div>
+        <div class="feature-item reveal"><span class="fi-icon">✓</span> Unlimited prints during booked hours</div>
+        <div class="feature-item reveal"><span class="fi-icon">✓</span> Complimentary cardboard prop frames</div>
+        <div class="feature-item reveal"><span class="fi-icon">✓</span> Custom layout design for every event</div>
       </div>
     </div>
-    <div class="machines-img reveal">
-      <img src="images/machines.jpg" alt="Pixelscue Bangalore's four custom-built photo booth machines" loading="lazy" decoding="async">
+    <div class="machine-slider reveal" id="machineSlider">
+      <div class="machine-slide active">
+        <img src="images/booth-lineup.jpg" alt="Pixelscue's classic instant photo booth" loading="lazy" decoding="async">
+        <div class="slide-caption">Classic Photo Booth</div>
+      </div>
+      <div class="machine-slide placeholder">
+        <div class="ph-icon">🔄</div>
+        <div class="ph-label">360° Video Booth</div>
+        <div class="ph-sub">Photo coming soon</div>
+      </div>
+      <div class="machine-slide">
+        <img src="images/mirror-booth-demo.jpg" alt="Pixelscue interactive mirror booth" loading="lazy" decoding="async">
+        <div class="slide-caption">Mirror Booth</div>
+      </div>
+      <div class="machine-slide placeholder">
+        <div class="ph-icon">📱</div>
+        <div class="ph-label">iPad Booth</div>
+        <div class="ph-sub">Photo coming soon</div>
+      </div>
+      <button type="button" class="slider-nav slider-prev" id="sliderPrev" aria-label="Previous machine">‹</button>
+      <button type="button" class="slider-nav slider-next" id="sliderNext" aria-label="Next machine">›</button>
+      <div class="slider-dots">
+        <button type="button" class="slider-dot active" data-slide="0" aria-label="Show Classic Photo Booth"></button>
+        <button type="button" class="slider-dot" data-slide="1" aria-label="Show 360° Video Booth"></button>
+        <button type="button" class="slider-dot" data-slide="2" aria-label="Show Mirror Booth"></button>
+        <button type="button" class="slider-dot" data-slide="3" aria-label="Show iPad Booth"></button>
+      </div>
     </div>
   </div>
 </section>
-
-<div class="tear tear-gold"></div>
 
 <!-- ============ VIDEO SHOWCASE ============ -->
 <section class="video-showcase">
   <div class="section-inner">
     <span class="kicker reveal">See it in motion</span>
-    <h2 class="reveal">The 360° spin, live from a real event.</h2>
-    <p class="lede reveal">This is exactly what your guests step onto — no rehearsal, no filters, just the booth doing its thing.</p>
+    <h2 class="reveal">Real guests, real prints, no retakes.</h2>
+    <p class="lede reveal">This is exactly what happens when your guests step up to a classic Pixelscue instant photo booth — big poses, instant prints, zero rehearsal.</p>
     <div class="video-frame reveal" id="videoFrame">
-      <img src="images/booth-360-action.jpg" alt="360° video booth in action" class="video-poster" loading="lazy" decoding="async">
-      <button type="button" class="video-play" id="videoPlayBtn" aria-label="Play 360° booth showcase video">
+      <img src="images/booth-setup.jpg" alt="Pixelscue classic instant photo booth ready at an event" class="video-poster" loading="lazy" decoding="async">
+      <button type="button" class="video-play" id="videoPlayBtn" aria-label="Play classic instant photo booth video">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       </button>
     </div>
   </div>
 </section>
-
-<div class="tear tear-pink"></div>
 
 <!-- ============ GALLERY ============ -->
 <section id="gallery">
@@ -413,7 +473,6 @@
       <div class="gitem reveal"><img src="images/corporate-natwest.jpg" alt="NatWest corporate photo booth event" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/college-learningday.jpg" alt="College learning day photo booth event" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/birthday-strip.jpeg" alt="Birthday party photo strip" loading="lazy" decoding="async"></div>
-      <div class="gitem reveal"><img src="images/booth-360-action.jpg" alt="360° video booth spinning in action at a Bangalore event" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/mirror-booth-demo.jpg" alt="Interactive mirror booth with touch-screen prompts" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/kids-event-1.jpg" alt="Kids enjoying the photo booth at a family event" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/kids-event-2.jpg" alt="Kids photo booth moment in Bangalore" loading="lazy" decoding="async"></div>
@@ -457,8 +516,6 @@
     </div>
   </div>
 </section>
-
-<div class="tear tear-pink"></div>
 
 <!-- ============ PACKAGES ============ -->
 <section id="packages">
@@ -541,10 +598,25 @@
   </div>
 </section>
 
+<!-- ============ LOCATION ============ -->
+<section class="location" id="location">
+  <div class="section-inner location-grid">
+    <div class="location-copy">
+      <span class="kicker reveal">Find us</span>
+      <h2 class="reveal">Based in Bangalore, we travel to you.</h2>
+      <p class="reveal">Pixelscue Instant Photo Booth is based right here in Bangalore. Find us on Google Maps, or just tell us your venue and we'll be there.</p>
+      <a href="https://www.google.com/maps/place/Pixelscue+Instant+Photo+Booth/@12.9076828,77.6802284,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1314450fb607:0x6f6b8346ee2225e5!8m2!3d12.9076828!4d77.6802284!16s%2Fg%2F11ggb3cr0t?entry=ttu&g_ep=EgoyMDI2MDgwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="btn btn-outline reveal">📍 View on Google Maps</a>
+    </div>
+    <div class="location-map reveal">
+      <iframe src="https://maps.google.com/maps?q=12.9076828,77.6802284&z=16&output=embed" width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Pixelscue Instant Photo Booth location on Google Maps"></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="cta-final" id="contact">
   <div class="section-inner">
-    <span class="kicker reveal" style="color:var(--violet);">Got a date in mind?</span>
+    <span class="kicker reveal">Got a date in mind?</span>
     <h2 class="reveal">Let's lock it in.</h2>
     <p class="lede reveal">Fill this in and it opens straight to WhatsApp with your details ready to send — or just message us directly.</p>
     <form class="contact-form reveal" id="quoteForm">
@@ -574,6 +646,7 @@
   <img src="images/logo-horizontal.png" alt="Pixelscue Bangalore">
   <p>Creating Cute Memories · Bangalore, since 2017</p>
   <p style="margin-top:8px;">📞 +91 79750 91637 (Call / WhatsApp) &nbsp;·&nbsp; Serving all of Bangalore</p>
+  <p style="margin-top:8px;"><a href="https://www.google.com/maps/place/Pixelscue+Instant+Photo+Booth/@12.9076828,77.6802284,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1314450fb607:0x6f6b8346ee2225e5!8m2!3d12.9076828!4d77.6802284!16s%2Fg%2F11ggb3cr0t" target="_blank" rel="noopener">Find us on Google Maps</a></p>
 </footer>
 
 <a href="https://wa.me/917975091637?text=Hi%20Pixelscue%20Bangalore!" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
@@ -641,11 +714,34 @@
   }, { threshold: 0.5 });
   statNums.forEach(el => statIo.observe(el));
 
+  (function(){
+    const slider = document.getElementById('machineSlider');
+    if(!slider) return;
+    const slides = slider.querySelectorAll('.machine-slide');
+    const dots = slider.querySelectorAll('.slider-dot');
+    let current = 0;
+    function goTo(i){
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+    document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    if(!prefersReducedMotion){
+      let timer = setInterval(() => goTo(current + 1), 4500);
+      slider.addEventListener('mouseenter', () => clearInterval(timer));
+      slider.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), 4500); });
+    }
+  })();
+
   const videoFrame = document.getElementById('videoFrame');
   const videoPlayBtn = document.getElementById('videoPlayBtn');
   videoPlayBtn.addEventListener('click', function(){
     const video = document.createElement('video');
-    video.src = 'videos/booth-360-showcase.mp4';
+    video.src = 'videos/photobooth-showcase.mp4';
     video.controls = true;
     video.autoplay = true;
     video.playsInline = true;
