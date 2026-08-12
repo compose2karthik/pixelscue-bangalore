@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixelscue Bangalore — Photo Booth, 360° & Mirror Booth Rentals</title>
+<meta name="description" content="Pixelscue Bangalore: photo booth, 360° video booth, and mirror booth rentals for weddings, birthdays and corporate events. Creating Cute Memories since 2017.">
+<link rel="canonical" href="https://compose2karthik.github.io/pixelscue-bangalore/">
+
+<!-- EDIT-ME: images live in /images — swap any file to update a photo, keeping the same filename. -->
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#FF3366">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixelscue Bangalore">
+<meta property="og:title" content="Pixelscue Bangalore — Photo Booth, 360° & Mirror Booth Rentals">
+<meta property="og:description" content="Photo booths, 360° video booths and mirror booths for weddings, birthdays and corporate events across Bangalore. Creating Cute Memories since 2017.">
+<meta property="og:image" content="https://compose2karthik.github.io/pixelscue-bangalore/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://compose2karthik.github.io/pixelscue-bangalore/">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pixelscue Bangalore — Photo Booth, 360° & Mirror Booth Rentals">
+<meta name="twitter:description" content="Photo booths, 360° video booths and mirror booths for weddings, birthdays and corporate events across Bangalore.">
+<meta name="twitter:image" content="https://compose2karthik.github.io/pixelscue-bangalore/images/og-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Pixelscue Bangalore",
+  "description": "Photo booth, 360° video booth, and mirror booth rentals for weddings, birthdays and corporate events in Bangalore.",
+  "image": "https://compose2karthik.github.io/pixelscue-bangalore/images/og-cover.jpg",
+  "url": "https://compose2karthik.github.io/pixelscue-bangalore/",
+  "telephone": "+917975091637",
+  "priceRange": "₹₹",
+  "foundingDate": "2017",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bangalore",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bangalore"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --pink:#FF3366;
+    --gold:#FFB800;
+    --blue:#00B8D9;
+    --violet:#7C3AED;
+    --ink:#181322;
+    --paper:#FFFFFF;
+    --pale-pink:#FFF1F5;
+    --pale-gold:#FFF9E8;
+    --pale-blue:#EAFBFE;
+    --line:#EFE7F7;
+    --display:'Archivo Black', sans-serif;
+    --body:'Space Grotesk', sans-serif;
+    --hand:'Caveat', cursive;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body); background:var(--paper); color:var(--ink); overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- torn-edge divider (signature motif) ---------- */
+  .tear{ height:16px; background-size:24px 16px; background-repeat:repeat-x; }
+  .tear-pink{ background-image:linear-gradient(135deg, transparent 50%, var(--pink) 50%), linear-gradient(-135deg, transparent 50%, var(--pink) 50%); background-position: 0 0, 12px 0; background-color:transparent;}
+  .tear-gold{ background-image:linear-gradient(135deg, transparent 50%, var(--gold) 50%), linear-gradient(-135deg, transparent 50%, var(--gold) 50%); background-position: 0 0, 12px 0; }
+  .tear-blue{ background-image:linear-gradient(135deg, transparent 50%, var(--blue) 50%), linear-gradient(-135deg, transparent 50%, var(--blue) 50%); background-position: 0 0, 12px 0; }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 6vw; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav img.logo-img{ height:44px; }
+  .nav-links{ display:flex; gap:28px; font-weight:600; font-size:0.95rem; }
+  .nav-links a:hover{ color:var(--pink); }
+  .nav-cta{ background:var(--pink); color:#fff; padding:10px 20px; border-radius:30px; font-weight:700; font-size:0.9rem; transition:transform .2s ease, box-shadow .2s ease; }
+  .nav-cta:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(255,51,102,0.35); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100vh; display:flex; align-items:center;
+    padding:130px 6vw 70px; position:relative; overflow:hidden;
+    background:var(--paper);
+  }
+  .hero-blob{ position:absolute; border-radius:50%; z-index:0; will-change:transform; }
+  .hero-blob.blob-a{ width:420px; height:420px; background:radial-gradient(circle, var(--pale-pink) 0%, transparent 70%); top:-120px; right:-100px; }
+  .hero-blob.blob-b{ width:360px; height:360px; background:radial-gradient(circle, var(--pale-blue) 0%, transparent 70%); bottom:-100px; left:-80px; }
+  .collage{ transition:transform .15s ease-out; transform-style:preserve-3d; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center; max-width:1280px; margin:0 auto; width:100%; position:relative; z-index:2; }
+  .eyebrow{ font-family:var(--hand); font-size:1.5rem; color:var(--pink); display:inline-block; margin-bottom:12px; }
+  .hero h1{ font-family:var(--display); font-size:clamp(2.6rem, 6vw, 4.4rem); line-height:1.03; letter-spacing:-1px; margin-bottom:20px; }
+  .hero h1 .accent{ color:var(--pink); }
+  .hero p.sub{ font-size:1.12rem; line-height:1.6; max-width:520px; color:#4a4058; margin-bottom:32px; }
+  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{ font-weight:700; padding:15px 28px; border-radius:40px; font-size:1rem; display:inline-flex; align-items:center; gap:10px; transition:transform .2s ease, box-shadow .2s ease; }
+  .btn-primary{ background:var(--pink); color:#fff; position:relative; overflow:hidden; }
+  .btn-primary:hover{ transform:translateY(-3px) scale(1.02); box-shadow:0 10px 26px rgba(255,51,102,0.4); }
+  .btn-primary::after{ content:''; position:absolute; top:0; left:-60%; width:40%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent); transform:skewX(-20deg); transition:left .6s ease; }
+  .btn-primary:hover::after{ left:130%; }
+  .btn-outline{ background:#fff; border:2px solid var(--ink); color:var(--ink); }
+  .btn-outline:hover{ background:var(--ink); color:#fff; transform:translateY(-3px); }
+  .btn-pulse{ animation:pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{box-shadow:0 0 0 0 rgba(255,51,102,0.4);} 50%{box-shadow:0 0 0 14px rgba(255,51,102,0);} }
+
+  /* hero photo collage — real photos */
+  .collage{ position:relative; height:520px; }
+  .cphoto{ position:absolute; border-radius:8px; border:8px solid #fff; box-shadow:0 18px 40px rgba(24,19,34,0.18); overflow:hidden; }
+  .cphoto img{ width:100%; height:100%; object-fit:cover; }
+  .c1{ width:230px; height:290px; top:0; left:10px; transform:rotate(-7deg); animation:float1 5.5s ease-in-out infinite; z-index:3;}
+  .c2{ width:190px; height:240px; top:130px; right:0; transform:rotate(6deg); animation:float2 6s ease-in-out infinite; z-index:2;}
+  .c3{ width:180px; height:220px; bottom:0; left:70px; transform:rotate(4deg); animation:float3 5.2s ease-in-out infinite; z-index:1;}
+  @keyframes float1{ 0%,100%{transform:rotate(-7deg) translateY(0);} 50%{transform:rotate(-5deg) translateY(-12px);} }
+  @keyframes float2{ 0%,100%{transform:rotate(6deg) translateY(0);} 50%{transform:rotate(8deg) translateY(-9px);} }
+  @keyframes float3{ 0%,100%{transform:rotate(4deg) translateY(0);} 50%{transform:rotate(2deg) translateY(-10px);} }
+
+  /* ---------- stat band ---------- */
+  .stat-band{ padding:0 6vw 60px; position:relative; z-index:2; }
+  .stat-band-inner{ display:flex; justify-content:center; gap:60px; flex-wrap:wrap; text-align:center; }
+  .stat-num{ font-family:var(--display); font-size:clamp(2.2rem,4vw,3rem); color:var(--pink); display:block; letter-spacing:-1px; }
+  .stat-label{ font-size:.85rem; font-weight:600; color:#5a4d6b; text-transform:uppercase; letter-spacing:.04em; }
+
+  /* ---------- section shell ---------- */
+  section{ padding:90px 6vw; }
+  .section-inner{ max-width:1180px; margin:0 auto; }
+  .kicker{ font-family:var(--hand); font-size:1.3rem; color:var(--pink); margin-bottom:8px; display:block; }
+  h2{ font-family:var(--display); font-size:clamp(1.8rem, 3.6vw, 2.7rem); letter-spacing:-.5px; margin-bottom:14px; line-height:1.08; }
+  .lede{ font-size:1.04rem; max-width:600px; color:#5a4d6b; margin-bottom:46px; line-height:1.6; }
+  .reveal{ opacity:0; transform:translateY(36px); transition:opacity .7s ease, transform .7s ease; transition-delay:calc(min(var(--i,0), 10) * 55ms); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- services ---------- */
+  .service-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .service-card{ background:#fff; border-radius:18px; padding:28px 22px; border:2px solid var(--line); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .service-card:hover{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(24,19,34,0.1); border-color:var(--pink); }
+  .service-icon{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:16px; color:#fff; transition:transform .35s ease; }
+  .service-card:hover .service-icon{ transform:rotate(-8deg) scale(1.1); }
+  .service-card:nth-child(1) .service-icon{ background:var(--pink); }
+  .service-card:nth-child(2) .service-icon{ background:var(--blue); }
+  .service-card:nth-child(3) .service-icon{ background:var(--gold); color:var(--ink); }
+  .service-card:nth-child(4) .service-icon{ background:var(--violet); }
+  .service-card h3{ font-family:var(--display); font-size:1.02rem; margin-bottom:8px; letter-spacing:-.3px; }
+  .service-card p{ font-size:0.92rem; color:#5a4d6b; line-height:1.5; }
+
+  /* ---------- machines ---------- */
+  .machines{ background:var(--pale-blue); }
+  .machines-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+  .machines-copy p{ font-size:1.02rem; line-height:1.7; color:#3d3450; margin-bottom:16px; }
+  .machines-img{ border-radius:18px; overflow:hidden; box-shadow:0 20px 45px rgba(24,19,34,0.15); }
+  .stat-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+  .stat-pill{ background:#fff; padding:11px 18px; border-radius:30px; font-weight:700; font-size:.88rem; border:2px solid var(--line); }
+
+  /* ---------- video showcase ---------- */
+  .video-showcase{ background:var(--ink); color:#fff; text-align:center; }
+  .video-showcase .kicker{ color:var(--gold); }
+  .video-showcase .lede{ color:#c9bfe0; margin-left:auto; margin-right:auto; }
+  .video-frame{ position:relative; max-width:760px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.45); aspect-ratio:16/9; background:#000; }
+  .video-frame img.video-poster{ width:100%; height:100%; object-fit:cover; display:block; opacity:.75; }
+  .video-frame video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .video-play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:84px; height:84px; border-radius:50%; background:var(--pink); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(255,51,102,0.5); transition:transform .25s ease, box-shadow .25s ease; animation:pulse 2.4s ease-in-out infinite; }
+  .video-play:hover{ transform:translate(-50%,-50%) scale(1.08); }
+  .video-play svg{ margin-left:4px; }
+  .video-frame.playing .video-play,
+  .video-frame.playing .video-poster{ display:none; }
+
+  /* ---------- gallery ---------- */
+  .gallery-grid{ columns:4 220px; column-gap:18px; }
+  .gitem{ break-inside:avoid; margin-bottom:18px; border-radius:12px; overflow:hidden; box-shadow:0 10px 26px rgba(24,19,34,0.1); transition:transform .3s ease; }
+  .gitem:hover{ transform:translateY(-6px) scale(1.01); }
+  .gitem img{ width:100%; height:auto; }
+  .gallery-more{ text-align:center; margin-top:36px; }
+
+  /* ---------- trusted by ---------- */
+  .trusted{ background:var(--pale-gold); text-align:center; overflow:hidden; }
+  .trusted h2{ margin-bottom:6px; }
+  .marquee{ margin-top:34px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .trusted-row{ display:flex; width:max-content; gap:14px; animation:marquee 22s linear infinite; }
+  .marquee:hover .trusted-row{ animation-play-state:paused; }
+  @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .trust-chip{ background:#fff; padding:14px 22px; border-radius:14px; font-weight:700; font-size:.95rem; box-shadow:0 8px 20px rgba(24,19,34,0.06); white-space:nowrap; transition:transform .25s ease, box-shadow .25s ease; }
+  .trust-chip:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(24,19,34,0.12); }
+
+  /* ---------- packages ---------- */
+  .pkg-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .pkg-card{ border-radius:20px; padding:28px 22px; border:2px solid var(--line); background:#fff; transition:transform .3s ease, box-shadow .3s ease; }
+  .pkg-card.featured{ background:var(--ink); color:#fff; border-color:var(--ink); transform:scale(1.03); }
+  .pkg-card:hover{ transform:translateY(-6px); box-shadow:0 18px 36px rgba(24,19,34,0.12); }
+  .pkg-card.featured:hover{ transform:scale(1.03) translateY(-6px); }
+  .pkg-card .tag{ font-family:var(--hand); color:var(--pink); font-size:1.05rem; }
+  .pkg-card.featured .tag{ color:var(--gold); }
+  .pkg-card h3{ font-family:var(--display); font-size:1rem; margin:4px 0 4px; letter-spacing:-.3px; }
+  .pkg-price{ font-family:var(--display); font-size:1.7rem; margin:10px 0 4px; }
+  .pkg-price small{ font-family:var(--body); font-weight:600; font-size:.75rem; }
+  .pkg-extra{ font-size:.82rem; color:#8a7d9c; margin-bottom:18px; }
+  .pkg-card.featured .pkg-extra{ color:#c9bfe0; }
+  .pkg-card ul{ list-style:none; margin-bottom:22px; }
+  .pkg-card li{ padding:7px 0; font-size:.87rem; border-bottom:1px dashed var(--line); }
+  .pkg-card.featured li{ border-bottom:1px dashed rgba(255,255,255,0.15); }
+  .pkg-card li::before{ content:'✓ '; color:var(--blue); font-weight:700; }
+  .pkg-card.featured li::before{ color:var(--gold); }
+  .pkg-note{ margin-top:30px; font-size:.88rem; color:#8a7d9c; text-align:center; max-width:640px; margin-left:auto; margin-right:auto; }
+
+  /* ---------- areas ---------- */
+  .areas{ text-align:center; }
+  .area-chips{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:26px; }
+  .chip{ background:#fff; border:2px solid var(--line); padding:10px 18px; border-radius:24px; font-weight:600; font-size:.9rem; transition:all .2s ease; }
+  .chip:hover{ background:var(--pink); color:#fff; border-color:var(--pink); transform:translateY(-2px); }
+
+  /* ---------- contact ---------- */
+  .cta-final{ background:linear-gradient(135deg, var(--gold), var(--pink)); color:var(--ink); text-align:center; }
+  .cta-final h2{ color:var(--ink); }
+  .cta-final .lede{ color:#3a2a12; margin:0 auto 40px; }
+  .contact-form{ max-width:600px; margin:0 auto; background:#fff; border-radius:20px; padding:34px; text-align:left; box-shadow:0 20px 50px rgba(0,0,0,0.15); }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .form-row.full{ grid-template-columns:1fr; }
+  input, select{ width:100%; padding:13px 16px; border-radius:10px; border:2px solid var(--line); font-family:var(--body); font-size:.95rem; background:#fff; transition:border-color .2s ease; }
+  input:focus, select:focus{ outline:none; border-color:var(--pink); }
+  .form-submit{ width:100%; background:var(--ink); color:#fff; padding:16px; border-radius:12px; font-weight:700; font-size:1rem; margin-top:6px; transition:transform .2s ease, background .2s ease; }
+  .form-submit:hover{ background:var(--pink); transform:translateY(-2px); }
+
+  footer{ background:var(--ink); color:#c9bfe0; text-align:center; padding:44px 6vw; font-size:.88rem; }
+  footer img{ height:34px; margin:0 auto 14px; filter:brightness(0) invert(1); }
+  footer a{ color:var(--gold); font-weight:600; }
+
+  .wa-float{ position:fixed; bottom:24px; right:24px; z-index:99; background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6rem; box-shadow:0 10px 26px rgba(0,0,0,0.25); animation:pulse2 2.4s ease-in-out infinite; }
+  @keyframes pulse2{ 0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.45);} 50%{box-shadow:0 0 0 14px rgba(37,211,102,0);} }
+
+  @media (max-width:900px){
+    .nav-links{ display:none; }
+    .hero-grid{ grid-template-columns:1fr; gap:44px; }
+    .collage{ height:380px; max-width:400px; margin:0 auto; }
+    .service-grid{ grid-template-columns:repeat(2,1fr); }
+    .machines-grid{ grid-template-columns:1fr; gap:30px; }
+    .pkg-grid{ grid-template-columns:repeat(2,1fr); }
+    .pkg-card.featured{ transform:none; }
+    .form-row{ grid-template-columns:1fr; }
+    .gallery-grid{ columns:2 180px; }
+  }
+  @media (max-width:560px){
+    .service-grid{ grid-template-columns:1fr; }
+    .pkg-grid{ grid-template-columns:1fr; }
+    section{ padding:70px 6vw; }
+    .c1{ width:170px; height:210px; left:0; }
+    .c2{ width:150px; height:190px; top:100px; }
+    .c3{ width:140px; height:170px; left:40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <img src="images/logo-horizontal.png" alt="Pixelscue Bangalore" class="logo-img">
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#packages">Packages</a>
+    <a href="#areas">Areas</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://wa.me/917975091637?text=Hi%20Pixelscue%20Bangalore!%20I'd%20like%20a%20quote." class="nav-cta">WhatsApp Us</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-blob blob-a" data-parallax="0.15"></div>
+  <div class="hero-blob blob-b" data-parallax="0.1"></div>
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow reveal">Bangalore's Photo Booth Crew Since 2017</span>
+      <h1 class="reveal">Flash. Print.<br>Party <span class="accent">Repeat.</span></h1>
+      <p class="sub reveal">Photo booths, 360° video booths and mirror booths for weddings, birthdays and corporate events — set up anywhere across Bangalore, run by a trained crew, done right the first time.</p>
+      <div class="cta-row reveal">
+        <a href="https://wa.me/917975091637?text=Hi%20Pixelscue%20Bangalore!%20I'd%20like%20a%20quote." class="btn btn-primary btn-pulse">💬 Get a Quote on WhatsApp</a>
+        <a href="#contact" class="btn btn-outline">Check Your Date</a>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="cphoto c1"><img src="images/wedding-sridevi.jpg" alt="Wedding photo booth moment in Bangalore"></div>
+      <div class="cphoto c2"><img src="images/corporate-natwest.jpg" alt="Corporate event photo booth Bangalore"></div>
+      <div class="cphoto c3"><img src="images/birthday-strip.jpeg" alt="Birthday party photo strip"></div>
+    </div>
+  </div>
+</section>
+
+<section class="stat-band">
+  <div class="section-inner stat-band-inner">
+    <div class="stat-count reveal">
+      <span class="stat-num" data-count="9">0</span>
+      <span class="stat-label">Years in Bangalore</span>
+    </div>
+    <div class="stat-count reveal">
+      <span class="stat-num" data-count="4">0</span>
+      <span class="stat-label">Custom-Built Booths</span>
+    </div>
+    <div class="stat-count reveal">
+      <span class="stat-num" data-count="30">0</span>
+      <span class="stat-label">km Free Transport</span>
+    </div>
+  </div>
+</section>
+
+<div class="tear tear-pink"></div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="section-inner">
+    <span class="kicker reveal">What we bring to your event</span>
+    <h2 class="reveal">One crew, every kind of booth.</h2>
+    <p class="lede reveal">Pick one or bundle them — every booth comes with a trained on-site technician and assistant, so running the show is never on you.</p>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">📸</div>
+        <h3>Classic Photo Booth</h3>
+        <p>Unlimited instant prints, collage or single-layout designs, matched to your event theme.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔄</div>
+        <h3>360° Video Booth</h3>
+        <p>The slow-motion spin every guest's phone wants to capture — built for weddings and launches.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🪞</div>
+        <h3>Mirror Booth</h3>
+        <p>A full-length interactive mirror with touch-screen prompts, signature animations, and instant prints.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🏢</div>
+        <h3>Corporate Branded Booth</h3>
+        <p>Your logo on every print and layout overlay — built for launches, family days, and kids' events.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tear tear-blue"></div>
+
+<!-- ============ MACHINES ============ -->
+<section class="machines">
+  <div class="section-inner machines-grid">
+    <div class="machines-copy">
+      <span class="kicker reveal">Our equipment</span>
+      <h2 class="reveal">Four custom-built booths, ready to travel.</h2>
+      <p class="reveal">Every booth is built and maintained in-house — LED-lit, touchscreen-driven, and packed into our van with backups on hand, so setup is smooth whether it's a 50-guest house party or a 500-guest wedding.</p>
+      <div class="stat-row">
+        <span class="stat-pill reveal">📍 Based in Bangalore</span>
+        <span class="stat-pill reveal">🛠️ 4 in-house booths</span>
+        <span class="stat-pill reveal">🚐 Own transport, up to 30km included</span>
+        <span class="stat-pill reveal">👥 Technician + assistant on every job</span>
+      </div>
+    </div>
+    <div class="machines-img reveal">
+      <img src="images/machines.jpg" alt="Pixelscue Bangalore's four custom-built photo booth machines" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<div class="tear tear-gold"></div>
+
+<!-- ============ VIDEO SHOWCASE ============ -->
+<section class="video-showcase">
+  <div class="section-inner">
+    <span class="kicker reveal">See it in motion</span>
+    <h2 class="reveal">The 360° spin, live from a real event.</h2>
+    <p class="lede reveal">This is exactly what your guests step onto — no rehearsal, no filters, just the booth doing its thing.</p>
+    <div class="video-frame reveal" id="videoFrame">
+      <img src="images/booth-360-action.jpg" alt="360° video booth in action" class="video-poster" loading="lazy" decoding="async">
+      <button type="button" class="video-play" id="videoPlayBtn" aria-label="Play 360° booth showcase video">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="tear tear-pink"></div>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="section-inner">
+    <span class="kicker reveal">From the reel</span>
+    <h2 class="reveal">Real events, real guests.</h2>
+    <p class="lede reveal">Weddings, birthdays, corporate parties and family fests across Bangalore.</p>
+    <div class="gallery-grid">
+      <div class="gitem reveal"><img src="images/corporate-mrcooper.jpg" alt="Mr. Cooper Group corporate event photo booth" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/wedding-maria-1.jpg" alt="Maria and Bristo wedding photo booth" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/family-advisor360.jpg" alt="Advisor360 family fun fest photo booth" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/layout-gbskidsday.jpeg" alt="Custom branded photo booth layout design for The Adecco Group Kids Day" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/wedding-maria-2.jpg" alt="Wedding photo booth candid" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/corporate-natwest.jpg" alt="NatWest corporate photo booth event" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/college-learningday.jpg" alt="College learning day photo booth event" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/birthday-strip.jpeg" alt="Birthday party photo strip" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/booth-360-action.jpg" alt="360° video booth spinning in action at a Bangalore event" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/mirror-booth-demo.jpg" alt="Interactive mirror booth with touch-screen prompts" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/kids-event-1.jpg" alt="Kids enjoying the photo booth at a family event" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/kids-event-2.jpg" alt="Kids photo booth moment in Bangalore" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/booth-setup.jpg" alt="Pixelscue crew setting up a photo booth on-site" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/booth-lineup.jpg" alt="Pixelscue's full lineup of custom-built photo booth machines" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/birthday-layout-design.jpg" alt="Custom birthday party photo strip layout design" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/wedding-layout-design.jpg" alt="Custom wedding photo strip layout design" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/layout-design-sample.jpg" alt="Sample branded photo booth layout design" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/print-postcard-sample.jpg" alt="Instant print postcard sample from a photo booth session" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/cardboard-prop-frame.jpg" alt="Fun cardboard prop frame used at photo booth events" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/event-moment-1.jpg" alt="Guests posing at a Pixelscue photo booth event" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/event-moment-2.jpg" alt="Photo booth moment at a Bangalore celebration" loading="lazy" decoding="async"></div>
+      <div class="gitem reveal"><img src="images/event-moment-3.jpg" alt="Guests having fun at a Pixelscue photo booth" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="gallery-more reveal">
+      <a href="https://wa.me/917975091637?text=Hi%20Pixelscue%20Bangalore!%20Can%20I%20see%20more%20photos%20from%20past%20events%3F" class="btn btn-outline">See more on WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUSTED BY ============ -->
+<section class="trusted">
+  <div class="section-inner">
+    <span class="kicker reveal">Who we've worked with</span>
+    <h2 class="reveal">Corporates, colleges and celebrations.</h2>
+    <div class="marquee">
+      <div class="trusted-row">
+        <span class="trust-chip">Mr. Cooper Group</span>
+        <span class="trust-chip">NatWest Group</span>
+        <span class="trust-chip">Advisor360°</span>
+        <span class="trust-chip">The Adecco Group</span>
+        <span class="trust-chip">Standard Chartered</span>
+        <span class="trust-chip">Weddings &amp; Private Parties</span>
+        <span class="trust-chip" aria-hidden="true">Mr. Cooper Group</span>
+        <span class="trust-chip" aria-hidden="true">NatWest Group</span>
+        <span class="trust-chip" aria-hidden="true">Advisor360°</span>
+        <span class="trust-chip" aria-hidden="true">The Adecco Group</span>
+        <span class="trust-chip" aria-hidden="true">Standard Chartered</span>
+        <span class="trust-chip" aria-hidden="true">Weddings &amp; Private Parties</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tear tear-pink"></div>
+
+<!-- ============ PACKAGES ============ -->
+<section id="packages">
+  <div class="section-inner">
+    <span class="kicker reveal">Packages</span>
+    <h2 class="reveal">Simple to book, easy to customize.</h2>
+    <p class="lede reveal">Every package below includes layout design, testing, setup, technician and assistant, plus transport within 30km. GST and transport beyond 30km are extra.</p>
+    <div class="pkg-grid">
+      <div class="pkg-card reveal">
+        <span class="tag">Popular</span>
+        <h3>Classic — Collage Layout</h3>
+        <div class="pkg-price">₹14,000 <small>/ 3 hrs</small></div>
+        <div class="pkg-extra">+₹2,000 per extra hour</div>
+        <ul>
+          <li>Unlimited instant prints</li>
+          <li>Collage-style layout design</li>
+          <li>Prop box included</li>
+        </ul>
+        <a href="https://wa.me/917975091637?text=Hi!%20I'd%20like%20a%20quote%20for%20the%20Classic%20Collage%20package." class="btn btn-outline" style="width:100%; justify-content:center;">Get Quote</a>
+      </div>
+      <div class="pkg-card reveal">
+        <span class="tag">Custom</span>
+        <h3>Classic — Single Layout</h3>
+        <div class="pkg-price">₹16,000 <small>/ 3 hrs</small></div>
+        <div class="pkg-extra">+₹2,500 per extra hour</div>
+        <ul>
+          <li>One dedicated custom design</li>
+          <li>Unlimited instant prints</li>
+          <li>Prop box included</li>
+        </ul>
+        <a href="https://wa.me/917975091637?text=Hi!%20I'd%20like%20a%20quote%20for%20the%20Classic%20Single%20Layout%20package." class="btn btn-outline" style="width:100%; justify-content:center;">Get Quote</a>
+      </div>
+      <div class="pkg-card featured reveal">
+        <span class="tag">Trending</span>
+        <h3>360° Video Booth</h3>
+        <div class="pkg-price">₹14,000 <small>/ 3 hrs</small></div>
+        <div class="pkg-extra">+₹2,000 per extra hour</div>
+        <ul>
+          <li>Slow-motion spin video</li>
+          <li>Instant social sharing</li>
+          <li>Custom branding overlay</li>
+        </ul>
+        <a href="https://wa.me/917975091637?text=Hi!%20I'd%20like%20a%20quote%20for%20the%20360%C2%B0%20Video%20Booth%20package." class="btn btn-primary" style="width:100%; justify-content:center;">Get Quote</a>
+      </div>
+      <div class="pkg-card reveal">
+        <span class="tag">Premium</span>
+        <h3>Mirror Booth</h3>
+        <div class="pkg-price">₹20,000 <small>/ 3 hrs</small></div>
+        <div class="pkg-extra">+₹2,500 per extra hour</div>
+        <ul>
+          <li>Full-length interactive mirror</li>
+          <li>Touch-screen animations</li>
+          <li>Instant prints</li>
+        </ul>
+        <a href="https://wa.me/917975091637?text=Hi!%20I'd%20like%20a%20quote%20for%20the%20Mirror%20Booth%20package." class="btn btn-outline" style="width:100%; justify-content:center;">Get Quote</a>
+      </div>
+    </div>
+    <p class="pkg-note">All packages include layout design, testing, transportation up to 30km, setup, technician and assistant. GST and transport beyond 30km are charged separately.</p>
+  </div>
+</section>
+
+<!-- ============ AREAS ============ -->
+<section class="areas" id="areas">
+  <div class="section-inner">
+    <span class="kicker reveal">Where we cover</span>
+    <h2 class="reveal">Anywhere across Bangalore.</h2>
+    <div class="area-chips">
+      <span class="chip reveal">Whitefield</span>
+      <span class="chip reveal">Koramangala</span>
+      <span class="chip reveal">Indiranagar</span>
+      <span class="chip reveal">HSR Layout</span>
+      <span class="chip reveal">Sarjapur Road</span>
+      <span class="chip reveal">Electronic City</span>
+      <span class="chip reveal">Marathahalli</span>
+      <span class="chip reveal">JP Nagar</span>
+      <span class="chip reveal">Jayanagar</span>
+      <span class="chip reveal">Bellandur</span>
+      <span class="chip reveal">Hebbal</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="cta-final" id="contact">
+  <div class="section-inner">
+    <span class="kicker reveal" style="color:var(--violet);">Got a date in mind?</span>
+    <h2 class="reveal">Let's lock it in.</h2>
+    <p class="lede reveal">Fill this in and it opens straight to WhatsApp with your details ready to send — or just message us directly.</p>
+    <form class="contact-form reveal" id="quoteForm">
+      <div class="form-row">
+        <input type="text" id="fname" placeholder="Your name" required>
+        <input type="tel" id="fphone" placeholder="Phone number" required>
+      </div>
+      <div class="form-row">
+        <input type="date" id="fdate" required>
+        <select id="ftype" required>
+          <option value="">Event type</option>
+          <option>Wedding</option>
+          <option>Birthday</option>
+          <option>Corporate Event</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row full">
+        <input type="text" id="flocation" placeholder="Venue / area in Bangalore">
+      </div>
+      <button type="submit" class="form-submit">Send via WhatsApp →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <img src="images/logo-horizontal.png" alt="Pixelscue Bangalore">
+  <p>Creating Cute Memories · Bangalore, since 2017</p>
+  <p style="margin-top:8px;">📞 +91 79750 91637 (Call / WhatsApp) &nbsp;·&nbsp; Serving all of Bangalore</p>
+</footer>
+
+<a href="https://wa.me/917975091637?text=Hi%20Pixelscue%20Bangalore!" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('.service-grid, .gallery-grid, .pkg-grid, .area-chips, .stat-row, .stat-band-inner').forEach(grid => {
+    Array.from(grid.children).forEach((child, i) => child.style.setProperty('--i', i));
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  if(!prefersReducedMotion){
+    const blobs = document.querySelectorAll('.hero-blob');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if(!ticking){
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          blobs.forEach(b => { b.style.transform = `translateY(${y * parseFloat(b.dataset.parallax)}px)`; });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    const hero = document.querySelector('.hero');
+    const collage = document.querySelector('.collage');
+    if(hero && collage && window.innerWidth > 900){
+      hero.addEventListener('mousemove', (e) => {
+        const r = hero.getBoundingClientRect();
+        const dx = (e.clientX - r.left) / r.width - 0.5;
+        const dy = (e.clientY - r.top) / r.height - 0.5;
+        collage.style.transform = `perspective(1000px) rotateY(${dx * 8}deg) rotateX(${dy * -8}deg)`;
+      });
+      hero.addEventListener('mouseleave', () => { collage.style.transform = ''; });
+    }
+  }
+
+  const statNums = document.querySelectorAll('.stat-num');
+  const statIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      if(prefersReducedMotion){ el.textContent = target; statIo.unobserve(el); return; }
+      const duration = 1200;
+      const start = performance.now();
+      function tick(now){
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if(progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      statIo.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach(el => statIo.observe(el));
+
+  const videoFrame = document.getElementById('videoFrame');
+  const videoPlayBtn = document.getElementById('videoPlayBtn');
+  videoPlayBtn.addEventListener('click', function(){
+    const video = document.createElement('video');
+    video.src = 'videos/booth-360-showcase.mp4';
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    videoFrame.appendChild(video);
+    videoFrame.classList.add('playing');
+    video.play().catch(()=>{});
+  });
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value;
+    const phone = document.getElementById('fphone').value;
+    const date = document.getElementById('fdate').value;
+    const type = document.getElementById('ftype').value;
+    const location = document.getElementById('flocation').value;
+    const msg = `Hi Pixelscue Bangalore! I'd like a quote.%0A%0AName: ${name}%0APhone: ${phone}%0AEvent date: ${date}%0AEvent type: ${type}%0AVenue/area: ${location}`;
+    window.open(`https://wa.me/917975091637?text=${msg}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
