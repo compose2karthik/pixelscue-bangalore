@@ -42,6 +42,7 @@
   "image": "https://compose2karthik.github.io/pixelscue-bangalore/images/og-cover.jpg",
   "url": "https://compose2karthik.github.io/pixelscue-bangalore/",
   "telephone": "+917975091637",
+  "email": "kaladevi@pixelscue.com",
   "priceRange": "₹₹",
   "foundingDate": "2017",
   "address": {
@@ -89,6 +90,8 @@
   button{font-family:inherit; cursor:pointer; border:none;}
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+    .cslide{ opacity:0 !important; transform:none !important; }
+    .cslide:first-child{ opacity:1 !important; }
   }
 
   /* ---------- nav ---------- */
@@ -132,16 +135,27 @@
   .btn-pulse{ animation:pulse 2.4s ease-in-out infinite; }
   @keyframes pulse{ 0%,100%{box-shadow:0 0 0 0 rgba(255,51,102,0.4);} 50%{box-shadow:0 0 0 14px rgba(255,51,102,0);} }
 
-  /* hero photo collage — real photos */
+  /* hero photo collage — real photos, each slot cycles through a curated set */
   .collage{ position:relative; height:520px; }
-  .cphoto{ position:absolute; border-radius:8px; border:8px solid #fff; box-shadow:0 18px 40px rgba(24,19,34,0.18); overflow:hidden; }
-  .cphoto img{ width:100%; height:100%; object-fit:cover; }
-  .c1{ width:230px; height:290px; top:0; left:10px; transform:rotate(-7deg); animation:float1 5.5s ease-in-out infinite; z-index:3;}
-  .c2{ width:190px; height:240px; top:130px; right:0; transform:rotate(6deg); animation:float2 6s ease-in-out infinite; z-index:2;}
-  .c3{ width:180px; height:220px; bottom:0; left:70px; transform:rotate(4deg); animation:float3 5.2s ease-in-out infinite; z-index:1;}
-  @keyframes float1{ 0%,100%{transform:rotate(-7deg) translateY(0);} 50%{transform:rotate(-5deg) translateY(-12px);} }
+  .cphoto{ position:absolute; background:#fff; border-radius:8px; border:8px solid #fff; box-shadow:0 18px 40px rgba(24,19,34,0.18); overflow:hidden; perspective:900px; }
+  .c1{ width:280px; height:280px; top:14px; left:6px; transform:rotate(-6deg); animation:float1 5.5s ease-in-out infinite; z-index:3;}
+  .c2{ width:230px; height:230px; top:190px; right:0; transform:rotate(6deg); animation:float2 6s ease-in-out infinite; z-index:2;}
+  .c3{ width:210px; height:210px; bottom:6px; left:70px; transform:rotate(4deg); animation:float3 5.2s ease-in-out infinite; z-index:1;}
+  @keyframes float1{ 0%,100%{transform:rotate(-6deg) translateY(0);} 50%{transform:rotate(-4deg) translateY(-12px);} }
   @keyframes float2{ 0%,100%{transform:rotate(6deg) translateY(0);} 50%{transform:rotate(8deg) translateY(-9px);} }
   @keyframes float3{ 0%,100%{transform:rotate(4deg) translateY(0);} 50%{transform:rotate(2deg) translateY(-10px);} }
+
+  .cphoto .cslide{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; opacity:0; transform:rotateY(70deg) scale(.94); backface-visibility:hidden; animation:cslideCycle var(--cycle-duration, 14s) ease-in-out infinite; }
+  .cphoto .cslide:nth-child(1){ animation-delay:0s; }
+  .cphoto .cslide:nth-child(2){ animation-delay:calc(var(--cycle-duration, 14s) / -3); }
+  .cphoto .cslide:nth-child(3){ animation-delay:calc(var(--cycle-duration, 14s) / -3 * 2); }
+  @keyframes cslideCycle{
+    0%{ opacity:0; transform:rotateY(70deg) scale(.94); }
+    4%{ opacity:1; transform:rotateY(0deg) scale(1); }
+    29%{ opacity:1; transform:rotateY(0deg) scale(1); }
+    33.333%{ opacity:0; transform:rotateY(-70deg) scale(.94); }
+    100%{ opacity:0; transform:rotateY(-70deg) scale(.94); }
+  }
 
   /* ---------- stat band ---------- */
   .stat-band{ padding:0 6vw 60px; position:relative; z-index:2; }
@@ -150,7 +164,7 @@
   .stat-label{ font-size:.85rem; font-weight:600; color:#5a4d6b; text-transform:uppercase; letter-spacing:.04em; }
 
   /* ---------- section shell ---------- */
-  section{ padding:90px 6vw; }
+  section{ padding:90px 6vw; scroll-margin-top:84px; }
   .section-inner{ max-width:1180px; margin:0 auto; }
   .kicker{ font-family:var(--hand); font-size:1.3rem; color:var(--pink); margin-bottom:8px; display:block; }
   h2{ font-family:var(--display); font-size:clamp(1.8rem, 3.6vw, 2.7rem); letter-spacing:-.5px; margin-bottom:14px; line-height:1.08; }
@@ -225,8 +239,10 @@
   .trusted-row{ display:flex; width:max-content; gap:14px; animation:marquee 22s linear infinite; }
   .marquee:hover .trusted-row{ animation-play-state:paused; }
   @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  .trust-chip{ background:var(--paper); padding:14px 22px; border-radius:14px; font-weight:700; font-size:.95rem; border:1px solid var(--line); white-space:nowrap; transition:transform .25s ease, box-shadow .25s ease; }
+  .trust-chip{ background:var(--paper); padding:16px 28px; border-radius:14px; font-weight:700; font-size:.95rem; border:1px solid var(--line); white-space:nowrap; display:flex; align-items:center; justify-content:center; min-height:66px; transition:transform .25s ease, box-shadow .25s ease; }
   .trust-chip:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(24,19,34,0.12); }
+  .trust-logo{ height:26px; width:auto; max-width:130px; object-fit:contain; filter:grayscale(1) opacity(.55); transition:filter .3s ease; }
+  .trust-chip:hover .trust-logo{ filter:grayscale(0) opacity(1); }
 
   /* ---------- packages ---------- */
   .pkg-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
@@ -274,6 +290,10 @@
   input:focus, select:focus{ outline:none; border-color:var(--gold); }
   .form-submit{ width:100%; background:var(--ink); color:#fff; padding:16px; border-radius:12px; font-weight:700; font-size:1rem; margin-top:6px; transition:transform .2s ease, background .2s ease; }
   .form-submit:hover{ background:var(--gold); color:var(--ink); transform:translateY(-2px); }
+  .form-confirm{ text-align:center; padding:14px 6px 6px; }
+  .form-confirm .confirm-icon{ font-size:2.6rem; margin-bottom:10px; }
+  .form-confirm h3{ font-family:var(--display); font-size:1.3rem; margin-bottom:10px; letter-spacing:-.3px; }
+  .form-confirm p{ color:#5a4d6b; line-height:1.6; margin-bottom:22px; }
 
   footer{ background:var(--ink); color:#a89bb8; text-align:center; padding:44px 6vw; font-size:.88rem; border-top:1px solid rgba(255,255,255,0.08); }
   footer img{ height:34px; margin:0 auto 14px; filter:brightness(0) invert(1); }
@@ -304,9 +324,9 @@
     .service-grid{ grid-template-columns:1fr; }
     .pkg-grid{ grid-template-columns:1fr; }
     section{ padding:70px 6vw; }
-    .c1{ width:170px; height:210px; left:0; }
-    .c2{ width:150px; height:190px; top:100px; }
-    .c3{ width:140px; height:170px; left:40px; }
+    .c1{ width:190px; height:190px; left:0; top:0; }
+    .c2{ width:160px; height:160px; top:130px; }
+    .c3{ width:150px; height:150px; left:40px; bottom:0; }
   }
 </style>
 </head>
@@ -343,15 +363,31 @@
       </div>
     </div>
     <div class="collage">
-      <div class="cphoto c1"><img src="images/wedding-sridevi.jpg" alt="Wedding photo booth moment in Bangalore"></div>
-      <div class="cphoto c2"><img src="images/corporate-natwest.jpg" alt="Corporate event photo booth Bangalore"></div>
-      <div class="cphoto c3"><img src="images/birthday-strip.jpeg" alt="Birthday party photo strip"></div>
+      <div class="cphoto c1" style="--cycle-duration:13.5s">
+        <img class="cslide" src="images/wedding-sridevi.jpg" alt="Full printed photo booth layout from Sridevi &amp; Nikhil's wedding in Bangalore">
+        <img class="cslide" src="images/wedding-maria-1.jpg" alt="Full printed photo booth layout from Maria &amp; Bristo's wedding">
+        <img class="cslide" src="images/birthday-strip.jpeg" alt="Instant photo strip print from a birthday party">
+      </div>
+      <div class="cphoto c2" style="--cycle-duration:15s">
+        <img class="cslide" src="images/corporate-natwest.jpg" alt="Full printed photo booth layout from a NatWest corporate event">
+        <img class="cslide" src="images/corporate-mrcooper.jpg" alt="Full printed photo booth layout from a Mr. Cooper Group event">
+        <img class="cslide" src="images/family-advisor360.jpg" alt="Full printed photo booth layout from Advisor360 Family Fun Fest">
+      </div>
+      <div class="cphoto c3" style="--cycle-duration:11.7s">
+        <img class="cslide" src="images/mirror-booth-demo.jpg" alt="Pixelscue interactive mirror booth machine">
+        <img class="cslide" src="images/booth-setup.jpg" alt="Pixelscue classic instant photo booth machine on-site">
+        <img class="cslide" src="images/college-learningday.jpg" alt="Full printed photo booth layout from a college Learning Day event">
+      </div>
     </div>
   </div>
 </section>
 
 <section class="stat-band">
   <div class="section-inner stat-band-inner">
+    <div class="stat-count reveal">
+      <span class="stat-num" data-count="5693" data-suffix="+">0</span>
+      <span class="stat-label">Events &amp; Counting</span>
+    </div>
     <div class="stat-count reveal">
       <span class="stat-num" data-count="9">0</span>
       <span class="stat-label">Years in Bangalore</span>
@@ -474,13 +510,8 @@
       <div class="gitem reveal"><img src="images/college-learningday.jpg" alt="College learning day photo booth event" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/birthday-strip.jpeg" alt="Birthday party photo strip" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/mirror-booth-demo.jpg" alt="Interactive mirror booth with touch-screen prompts" loading="lazy" decoding="async"></div>
-      <div class="gitem reveal"><img src="images/kids-event-1.jpg" alt="Kids enjoying the photo booth at a family event" loading="lazy" decoding="async"></div>
-      <div class="gitem reveal"><img src="images/kids-event-2.jpg" alt="Kids photo booth moment in Bangalore" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/booth-setup.jpg" alt="Pixelscue crew setting up a photo booth on-site" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/booth-lineup.jpg" alt="Pixelscue's full lineup of custom-built photo booth machines" loading="lazy" decoding="async"></div>
-      <div class="gitem reveal"><img src="images/birthday-layout-design.jpg" alt="Custom birthday party photo strip layout design" loading="lazy" decoding="async"></div>
-      <div class="gitem reveal"><img src="images/wedding-layout-design.jpg" alt="Custom wedding photo strip layout design" loading="lazy" decoding="async"></div>
-      <div class="gitem reveal"><img src="images/layout-design-sample.jpg" alt="Sample branded photo booth layout design" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/print-postcard-sample.jpg" alt="Instant print postcard sample from a photo booth session" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/cardboard-prop-frame.jpg" alt="Fun cardboard prop frame used at photo booth events" loading="lazy" decoding="async"></div>
       <div class="gitem reveal"><img src="images/event-moment-1.jpg" alt="Guests posing at a Pixelscue photo booth event" loading="lazy" decoding="async"></div>
@@ -500,17 +531,17 @@
     <h2 class="reveal">Corporates, colleges and celebrations.</h2>
     <div class="marquee">
       <div class="trusted-row">
-        <span class="trust-chip">Mr. Cooper Group</span>
-        <span class="trust-chip">NatWest Group</span>
-        <span class="trust-chip">Advisor360°</span>
-        <span class="trust-chip">The Adecco Group</span>
-        <span class="trust-chip">Standard Chartered</span>
+        <span class="trust-chip"><img src="images/logo-mrcooper.png" alt="Mr. Cooper Group" class="trust-logo"></span>
+        <span class="trust-chip"><img src="images/logo-natwest.png" alt="NatWest Group" class="trust-logo"></span>
+        <span class="trust-chip"><img src="images/logo-advisor360.png" alt="Advisor360°" class="trust-logo"></span>
+        <span class="trust-chip"><img src="images/logo-adecco.png" alt="The Adecco Group" class="trust-logo"></span>
+        <span class="trust-chip"><img src="images/logo-standardchartered.png" alt="Standard Chartered" class="trust-logo"></span>
         <span class="trust-chip">Weddings &amp; Private Parties</span>
-        <span class="trust-chip" aria-hidden="true">Mr. Cooper Group</span>
-        <span class="trust-chip" aria-hidden="true">NatWest Group</span>
-        <span class="trust-chip" aria-hidden="true">Advisor360°</span>
-        <span class="trust-chip" aria-hidden="true">The Adecco Group</span>
-        <span class="trust-chip" aria-hidden="true">Standard Chartered</span>
+        <span class="trust-chip" aria-hidden="true"><img src="images/logo-mrcooper.png" alt="" class="trust-logo"></span>
+        <span class="trust-chip" aria-hidden="true"><img src="images/logo-natwest.png" alt="" class="trust-logo"></span>
+        <span class="trust-chip" aria-hidden="true"><img src="images/logo-advisor360.png" alt="" class="trust-logo"></span>
+        <span class="trust-chip" aria-hidden="true"><img src="images/logo-adecco.png" alt="" class="trust-logo"></span>
+        <span class="trust-chip" aria-hidden="true"><img src="images/logo-standardchartered.png" alt="" class="trust-logo"></span>
         <span class="trust-chip" aria-hidden="true">Weddings &amp; Private Parties</span>
       </div>
     </div>
@@ -581,7 +612,8 @@
 <section class="areas" id="areas">
   <div class="section-inner">
     <span class="kicker reveal">Where we cover</span>
-    <h2 class="reveal">Anywhere across Bangalore.</h2>
+    <h2 class="reveal">Bangalore and beyond.</h2>
+    <p class="lede reveal" style="margin-left:auto; margin-right:auto;">Every package includes transport within 30km of the city, covering the areas below as standard. For venues further out, a modest additional transport charge applies per kilometre — just share your location and we'll quote it upfront.</p>
     <div class="area-chips">
       <span class="chip reveal">Whitefield</span>
       <span class="chip reveal">Koramangala</span>
@@ -639,6 +671,12 @@
       </div>
       <button type="submit" class="form-submit">Send via WhatsApp →</button>
     </form>
+    <div class="form-confirm reveal" id="quoteConfirm" hidden>
+      <div class="confirm-icon">✅</div>
+      <h3>Thanks<span id="confirmName"></span>!</h3>
+      <p>We've opened WhatsApp with your event details ready to send — just hit <strong>Send</strong> and our team will get back to you soon with pricing and availability<span id="confirmDate"></span>.</p>
+      <button type="button" class="btn btn-outline" id="confirmReset">Submit another request</button>
+    </div>
   </div>
 </section>
 
@@ -646,6 +684,7 @@
   <img src="images/logo-horizontal.png" alt="Pixelscue Bangalore">
   <p>Creating Cute Memories · Bangalore, since 2017</p>
   <p style="margin-top:8px;">📞 +91 79750 91637 (Call / WhatsApp) &nbsp;·&nbsp; Serving all of Bangalore</p>
+  <p style="margin-top:8px;">✉️ <a href="mailto:kaladevi@pixelscue.com">kaladevi@pixelscue.com</a></p>
   <p style="margin-top:8px;"><a href="https://www.google.com/maps/place/Pixelscue+Instant+Photo+Booth/@12.9076828,77.6802284,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1314450fb607:0x6f6b8346ee2225e5!8m2!3d12.9076828!4d77.6802284!16s%2Fg%2F11ggb3cr0t" target="_blank" rel="noopener">Find us on Google Maps</a></p>
 </footer>
 
@@ -699,13 +738,15 @@
       if(!entry.isIntersecting) return;
       const el = entry.target;
       const target = parseInt(el.dataset.count, 10);
-      if(prefersReducedMotion){ el.textContent = target; statIo.unobserve(el); return; }
+      const suffix = el.dataset.suffix || '';
+      if(prefersReducedMotion){ el.textContent = target.toLocaleString('en-IN') + suffix; statIo.unobserve(el); return; }
       const duration = 1200;
       const start = performance.now();
       function tick(now){
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
+        const current = Math.round(eased * target);
+        el.textContent = current.toLocaleString('en-IN') + (progress >= 1 ? suffix : '');
         if(progress < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -750,15 +791,33 @@
     video.play().catch(()=>{});
   });
 
-  document.getElementById('quoteForm').addEventListener('submit', function(e){
+  const quoteForm = document.getElementById('quoteForm');
+  const quoteConfirm = document.getElementById('quoteConfirm');
+  const confirmName = document.getElementById('confirmName');
+  const confirmDate = document.getElementById('confirmDate');
+  const confirmReset = document.getElementById('confirmReset');
+
+  quoteForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const name = document.getElementById('fname').value;
+    const name = document.getElementById('fname').value.trim();
     const phone = document.getElementById('fphone').value;
     const date = document.getElementById('fdate').value;
     const type = document.getElementById('ftype').value;
     const location = document.getElementById('flocation').value;
     const msg = `Hi Pixelscue Bangalore! I'd like a quote.%0A%0AName: ${name}%0APhone: ${phone}%0AEvent date: ${date}%0AEvent type: ${type}%0AVenue/area: ${location}`;
     window.open(`https://wa.me/917975091637?text=${msg}`, '_blank');
+
+    confirmName.textContent = name ? `, ${name}` : '';
+    confirmDate.textContent = date ? ` for ${new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' })}` : '';
+    quoteForm.hidden = true;
+    quoteConfirm.hidden = false;
+    quoteConfirm.classList.add('in');
+  });
+
+  confirmReset.addEventListener('click', function(){
+    quoteForm.reset();
+    quoteForm.hidden = false;
+    quoteConfirm.hidden = true;
   });
 </script>
 
